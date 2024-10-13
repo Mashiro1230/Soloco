@@ -4,8 +4,6 @@ import React from "react";
 import useSWR from "swr";
 import Image from "next/image";
 import { ActivityProps } from "@/app/commons/types/types";
-import { useRouter } from "next/navigation";
-import { useToken } from "@/app/commons/contexts/contexts";
 import { getImageUrl } from "@/app/commons/utils/imageUtils";
 import OneRideLimousineTimeline from "./timeline";
 import SpeechBubble from "./speech";
@@ -18,13 +16,6 @@ const Tokyo_Scenery = getImageUrl("tokyo.jpg");
 const StaffMegumi = getImageUrl("megumi.png");
 
 const Limousine: React.FC = () => {
-    const { token } = useToken();
-    const router = useRouter();
-
-    if (token === "") {
-        router.push("/login");
-    }
-
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const activityId = 1;
     const apiUrl = `${process.env.NEXT_PUBLIC_API_ACTIVITY_URL}/${activityId}`;

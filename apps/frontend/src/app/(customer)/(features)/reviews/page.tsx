@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import useSWR, { mutate } from "swr";
-import { useRouter } from "next/navigation";
-import { useToken } from "@/app/commons/contexts/contexts";
 import { ReviewProps, ReviewItem } from "@/app/commons/types/types";
 import { uploadFile } from "../../../commons/images/s3/imageActions";
 import LikeButton from "@/app/components/ui-elements/button/like/like";
@@ -15,13 +13,6 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const apiUrl = `${process.env.NEXT_PUBLIC_API_REVIEWS_URL}`;
 
 export default function Reviews() {
-    const { token } = useToken();
-    const router = useRouter();
-
-    if (token === "") {
-        router.push("/login");
-    }
-
     const {
         data: reviews,
         error,

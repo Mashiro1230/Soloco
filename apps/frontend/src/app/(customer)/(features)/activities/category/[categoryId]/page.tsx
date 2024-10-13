@@ -2,23 +2,14 @@
 
 import React from "react";
 import useSWR from "swr";
-import { useRouter } from "next/navigation";
 import ActivityList from "./activityList";
 import { ActivitiesProps } from "@/app/commons/types/types";
 import Heading from "@/app/components/ui-elements/heading";
-import { useToken } from "@/app/commons/contexts/contexts";
 import BallPulseSyncLoading from "@/app/components/ui-elements/loading/loading";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const ActivityPage: React.FC = () => {
-    const { token } = useToken();
-    const router = useRouter();
-
-    if (token === "") {
-        router.push("/login");
-    }
-
     const categoryId = 2;
     const apiUrl = `${process.env.NEXT_PUBLIC_API_ACTIVITIES_URL}/${categoryId}`;
     const {

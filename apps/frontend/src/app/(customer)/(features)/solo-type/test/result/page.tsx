@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useToken } from "@/app/commons/contexts/contexts";
 import { toast } from "react-toastify";
 import { PinkButton } from "@/app/components/ui-elements/button/button";
 import { SoloTypeResultProp } from "@/app/commons/types/types";
@@ -11,13 +9,6 @@ import { soloTypeDataList, SoloTypeData } from "./soloTypeData";
 import { getImageUrl } from "@/app/commons/utils/imageUtils";
 
 export default function SoloTypeResult() {
-    const { token } = useToken();
-    const router = useRouter();
-
-    if (token === "") {
-        router.push("/login");
-    }
-
     const [soloTypeResult, setSoloTypeResult] = useState<SoloTypeResultProp | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const searchParams = useSearchParams();

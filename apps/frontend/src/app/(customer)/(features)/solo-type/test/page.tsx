@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { SoloTypeFormProps } from "@/app/commons/types/types";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useToken } from "@/app/commons/contexts/contexts";
+import { useSearchParams } from "next/navigation";
 import { PinkButton } from "@/app/components/ui-elements/button/button";
 import { questions } from "./questions";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,13 +14,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const SoloTypeForm: React.FC = () => {
-    const { token } = useToken();
-    const router = useRouter();
-
-    if (token === "") {
-        router.push("/login");
-    }
-
     const { register, handleSubmit, setValue, watch } =
         useForm<SoloTypeFormProps>();
     const searchParams = useSearchParams();
