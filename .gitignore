@@ -78,3 +78,4 @@ yarn-error.log*
 
 # macOS
 /apps/.DS_Store
+*storybook.log
