@@ -1,8 +1,12 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { ScrollButtonProps } from "@/app/commons/types/types";
+import { ScrollButtonProps } from "@/types/types";
 
-const ScrollButton: React.FC<ScrollButtonProps> = ({ direction, onClick, show }) => {
+const ScrollButton: React.FC<ScrollButtonProps> = ({
+    direction,
+    onClick,
+    show,
+}) => {
     if (!show) return null;
 
     return (
@@ -13,7 +17,11 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({ direction, onClick, show })
             onClick={onClick}
             aria-label={`Scroll ${direction}`}
         >
-            {direction === "left" ? <ChevronLeft size={24} /> : <ChevronRight size={24} />}
+            {direction === "left" ? (
+                <ChevronLeft size={24} />
+            ) : (
+                <ChevronRight size={24} />
+            )}
         </button>
     );
 };

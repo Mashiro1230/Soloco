@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getImageUrl } from "@/app/commons/utils/imageUtils";
 import LikeButton from "../button/like/like";
 import FavoriteButton from "../button/favorite/favorite";
-import { ActivityCardProps } from "@/app/commons/types/types";
+import { ActivityCardProps } from "@/types/types";
 
 const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
     const imageUrl = getImageUrl(activity.image);

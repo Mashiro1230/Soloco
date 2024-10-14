@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getImageUrl } from "../../commons/utils/imageUtils";
+import { getImageUrl } from "../commons/utils/imageUtils";
 import { LandingPageHeader } from "@/app/components/layouts/header";
 import { Footer } from "@/app/components/layouts/footer";
 

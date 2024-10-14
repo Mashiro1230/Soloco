@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { CategoryCardProps } from "@/app/commons/types/types";
+import { CategoryCardProps } from "@/types/types";
 
 const CategoryCard: React.FC<CategoryCardProps> = ({
     imageSrc,
