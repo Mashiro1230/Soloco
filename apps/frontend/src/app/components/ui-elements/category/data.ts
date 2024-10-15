@@ -1,4 +1,4 @@
-import { getImageUrl } from "@/app/commons/utils/imageUtils";
+import { getImageUrl } from "@/utils/image";
 
 // S3から画像取得
 const ActiveCategoryImage = getImageUrl("active.jpg");

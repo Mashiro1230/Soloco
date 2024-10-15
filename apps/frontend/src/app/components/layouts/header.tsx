@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getImageUrl } from "@/app/commons/utils/imageUtils";
+import { getImageUrl } from "@/utils/image";
 import { CUSTOMER_NAVIGATION_LINKS } from "@/app/commons/constants/constants";
 import UserMenu from "../ui-elements/icon/icon";
 import { useToken } from "@/app/commons/contexts/contexts";
