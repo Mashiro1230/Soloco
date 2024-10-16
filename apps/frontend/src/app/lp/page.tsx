@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getImageUrl } from "@/utils/image";
-import { LandingPageHeader } from "@/app/components/layouts/header";
+import { LandingPageHeader } from "../components/layouts/Header/LandingPageHeader";
 import { Footer } from "@/app/components/layouts/footer";
 
 // S3から画像取得

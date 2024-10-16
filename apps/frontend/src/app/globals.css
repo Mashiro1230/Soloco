@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 51, 51, 51;  /* #333333 in RGB */
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  body {
+    @apply text-[#494949] dark:text-white;
+  }
+  h1 {
+    @apply text-h1 font-bold;
+  }
+  h2 {
+    @apply text-h2 font-semibold;
+  }
+  h3 {
+    @apply text-h3 font-semibold;
+  }
+  p {
+    @apply text-base;
+  }
+  span {
+    @apply text-sm;
+  }
+  .text-tiny {
+    @apply text-xs;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Swiper */
+.custom-swiper {
+  margin: 0 40px;
+}
+
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+    @apply text-pink-300
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+    @apply bg-pink-500;
+}
+
+/* ホバー*/
+.custom-swiper .swiper-button-next:hover,
+.custom-swiper .swiper-button-prev:hover {
+    @apply text-pink-600;
+}
+
+/* ページネーション */
+.custom-swiper .swiper-pagination-bullet {
+    @apply w-2 h-2 bg-pink-300 opacity-50;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+    @apply opacity-100;
+}
