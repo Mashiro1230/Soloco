@@ -11,6 +11,7 @@ const config: Config = {
         "./src/(customer)/**/**/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/commons/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./stories/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {

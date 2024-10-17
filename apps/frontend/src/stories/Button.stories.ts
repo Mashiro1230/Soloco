@@ -51,3 +51,11 @@ export const Small: Story = {
     label: 'Button',
   },
 };
+
+export const SmallDanger: Story = {
+  args: {
+    size: "small",
+    label: "Danger",
+    backgroundColor: "red",
+  },
+};
