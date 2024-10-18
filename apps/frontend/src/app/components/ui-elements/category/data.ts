@@ -1,10 +1,7 @@
-import { getImageUrl } from "@/utils/image";
-
-// S3から画像取得
-const ActiveCategoryImage = getImageUrl("active.jpg");
-const SpecialCategoryImage = getImageUrl("special.jpg");
-const RelaxCategoryImage = getImageUrl("relax.jpg");
-const GourmetCategoryImage = getImageUrl("gourmet.jpg");
+import ActiveCategoryImage from "../../../../../public/top/active.jpg"
+import SpecialCategoryImage from "../../../../../public/top/special.jpg"
+import RelaxCategoryImage from "../../../../../public/top/relax.jpg"
+import GourmetCategoryImage from "../../../../../public/top/gourmet.jpg"
 
 export const categoryData = [
     {
