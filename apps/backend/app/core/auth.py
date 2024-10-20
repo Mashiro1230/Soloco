@@ -12,5 +12,5 @@ def admin():
     print("パス", credentials_path)
     cred = credentials.Certificate(credentials_path)
     default_app = firebase_admin.initialize_app(cred)
-    
+
     return default_app
