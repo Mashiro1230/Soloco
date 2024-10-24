@@ -1,4 +1,4 @@
-import { UseFormRegister, FieldErrors, FieldValues } from "react-hook-form";
+import { UseFormRegister, FieldErrors } from "react-hook-form";
 import { PinkButton } from "../button/PinkButton";
 
 type SignUpFormProps = {

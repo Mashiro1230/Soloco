@@ -4,8 +4,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getImageUrl } from "@/utils/image";
-import { LandingPageHeader } from "../components/layouts/Header/LandingPageHeader";
-import { Footer } from "@/app/components/layouts/footer";
+import { LandingPageHeader } from "../../components/layouts/Header/LandingPageHeader";
+import { Footer } from "@/components/layouts/footer";
 
 // S3から画像取得
 const FVImage = getImageUrl("firstView.png");
