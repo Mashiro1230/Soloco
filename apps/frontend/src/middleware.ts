@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAuth } from "firebase/auth";
 import * as admin from "firebase-admin";
 
 if (!admin.apps.length) {
