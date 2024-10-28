@@ -88,6 +88,7 @@ export type SoloTypeResultProp = {
 export type UserRegisterProps = {
   email: string;
   nickname: string;
+  password: any;
   age: string;
 };
 

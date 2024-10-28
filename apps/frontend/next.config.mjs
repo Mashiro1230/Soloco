@@ -10,15 +10,6 @@ const nextConfig = {
         NEXT_PUBLIC_REGION: process.env.NEXT_PUBLIC_REGION,
         NEXT_PUBLIC_S3_BUCKET_NAME: process.env.NEXT_PUBLIC_S3_BUCKET_NAME,
     },
-    experimental: {
-        serverActions: true,
-    },
-    images: {
-        domains: [
-            `${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_REGION}.amazonaws.com`,
-            "cyzhebtcwjhpzsrkdrmx.supabase.co"
-        ],
-    },
 };
 
 export default nextConfig;
