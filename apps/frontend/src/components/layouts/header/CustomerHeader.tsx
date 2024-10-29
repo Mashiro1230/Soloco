@@ -1,12 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CustomerNavigationMenu } from "./CustomerNavitaion";
-import { getImageUrl } from "@/utils/image";
 
 // S3から画像取得
-const Logo = getImageUrl("soloco_logo.png");
-const CustomerLogoutIconImage = getImageUrl("icon_customer_logout.png");
-const CustomerLoginIconImage = getImageUrl("icon_customer_login.png");
+
 
 export const CustomerHeader = () => {
     return (
@@ -16,13 +13,13 @@ export const CustomerHeader = () => {
                     <div className="flex-shrink-0">
                         <Link href="/">
                             <div className="text-lg lg:text-xl font-bold">
-                                <Image
+                                {/* <Image
                                     src={Logo}
                                     width={120}
                                     height={40}
                                     alt="Logo"
                                     className="w-[120px] lg:w-[150px]"
-                                />
+                                /> */}
                             </div>
                         </Link>
                     </div>

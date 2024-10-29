@@ -1,13 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getImageUrl } from "@/utils/image";
 import LikeButton from "../button/like/like";
 import FavoriteButton from "../button/favorite/favorite";
 import { ActivityCardProps } from "@/types/types";
 
 const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
-    const imageUrl = getImageUrl(activity.image);
 
     return (
         <div className="flex-none w-72">
@@ -17,12 +15,12 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
                     className="block w-full h-full"
                 >
                     <div className="relative h-48 w-full">
-                        <Image
-                            src={imageUrl}
+                        {/* <Image
+                            src={}
                             alt={activity.provider_name}
                             layout="fill"
                             objectFit="cover"
-                        />
+                        /> */}
                     </div>
                 </Link>
                 <div className="p-4 flex-grow flex flex-col justify-between">
