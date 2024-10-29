@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getImageUrl } from "@/utils/image";
 
 // S3から画像取得
-const Logo = getImageUrl("soloco_logo.png");
+// const Logo = getImageUrl("soloco_logo.png");
 
 export const LandingPageHeader = () => (
     <header className="relative">
