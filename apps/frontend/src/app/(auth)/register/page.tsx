@@ -2,7 +2,7 @@
 
 import { useForm, FieldValues } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { auth, useAuth } from "@/lib/firebase/firebase";
+import { useAuth } from "@/lib/firebase/firebase";
 import { toast } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AuthSchema, authSchema } from "@/types/types";
