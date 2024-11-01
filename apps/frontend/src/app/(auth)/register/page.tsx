@@ -9,7 +9,7 @@ import { AuthSchema, authSchema } from "@/types/types";
 import { PinkButton } from "@/stories/PinkButton";
 
 export default function RegisterPage() {
-    const { signUp } = useAuth();
+    // const { signUp } = useAuth();
     const router = useRouter();
 
     const {
