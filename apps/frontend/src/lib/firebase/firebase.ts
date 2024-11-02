@@ -12,19 +12,3 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-
-export const useAuth = () => {
-  const signUp = async (email: string, password: string) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = await userCredential.user;
-      return user;
-    } catch (error) {
-      return "ユーザー登録エラー";
-    }
-  }
-};
