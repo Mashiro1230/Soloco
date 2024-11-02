@@ -1,15 +1,15 @@
 "use client";
 
-import { useForm, FieldValues } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/lib/firebase/firebase";
+import { useAuth } from "@/hooks/firebase/firebase";
 import { toast } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AuthSchema, authSchema } from "@/types/types";
 import { PinkButton } from "@/stories/PinkButton";
 
 export default function RegisterPage() {
-    // const { signUp } = useAuth();
+    const { signUp } = useAuth();
     const router = useRouter();
 
     const {
@@ -21,7 +21,7 @@ export default function RegisterPage() {
         resolver: zodResolver(authSchema),
     });
 
-    const onSubmit = async (data: FieldValues) => {
+    const onSubmit = async (data: AuthSchema) => {
         const { email, password } = data;
         const result = await signUp(email, password);
         if (result === "error") {
@@ -38,14 +38,6 @@ export default function RegisterPage() {
                         body: JSON.stringify(data),
                     }
                 );
-
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    console.error("サーバーエラー:", errorData);
-                    throw new Error(
-                        errorData.message || "サーバーエラーが発生しました"
-                    );
-                }
 
                 const userId = await response.json();
                 console.log("成功", userId);
