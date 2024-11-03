@@ -2,13 +2,21 @@ import { useFormContext } from "react-hook-form";
 import { AuthSchema } from "@/types/types";
 
 export function EmailInput() {
-    const { register, formState: { errors } } = useFormContext<AuthSchema>();
+    const {
+        register,
+        formState: { errors },
+    } = useFormContext<AuthSchema>();
 
     return (
         <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-1"
+            >
                 メールアドレス
-                <span className="text-sm font-medium text-red-600 ml-2">必須</span>
+                <span className="text-sm font-medium text-red-600 ml-2">
+                    必須
+                </span>
             </label>
             <input
                 {...register("email")}
@@ -18,7 +26,9 @@ export function EmailInput() {
                 placeholder="abc@test.com"
             />
             {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
+                <p className="text-red-500 text-xs mt-1">
+                    {errors.email.message}
+                </p>
             )}
         </div>
     );
