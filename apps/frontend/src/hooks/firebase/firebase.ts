@@ -23,13 +23,13 @@ export const useAuth = (): Auth => {
         }
     };
 
-    // ダミーの signIn
+    // ダミーのログイン
     const signIn = async (email: string, password: string): Promise<string> => {
         // サインインの実装（ここではダミーの返り値）
         return "Sign in not implemented";
     };
 
-    // ダミーの signOut
+    // ダミーのログアウト
     const signOut = async (): Promise<string> => {
         return "Sign out not implemented";
     };
