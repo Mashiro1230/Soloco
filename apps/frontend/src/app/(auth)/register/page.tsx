@@ -15,7 +15,7 @@ export default function RegisterPage() {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm<AuthSchema>({
         mode: "onBlur",
         resolver: zodResolver(authSchema),
@@ -41,6 +41,7 @@ export default function RegisterPage() {
 
                 const userId = await response.json();
                 toast.success("ユーザー登録完了！");
+                localStorage.setItem("userId", userId.id);
                 router.push(`/solo-type/test?userId=${userId.id}`);
             } catch (error) {
                 console.error("エラー:", error);
