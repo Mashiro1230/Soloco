@@ -1,16 +1,18 @@
+"use client";
+
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AuthSchema, authSchema } from "@/types/types";
-import { useAuth } from "@/hooks/firebase/firebase";
+import { useAuth } from "@/hooks/auth/auth";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import { EmailInput } from "./inputs/EmailInput";
-import { PasswordInput } from "./inputs/PasswordInput";
-import { NicknameInput } from "./inputs/NicknameInput";
-import { AgeSelect } from "./inputs/AgeSelect";
+import { EmailInput } from "@/components/elements/Form/inputs/EmailInput";
+import { PasswordInput } from "@/components/elements/Form/inputs/PasswordInput";
+import { NicknameInput } from "@/components/elements/Form/inputs/NicknameInput";
+import { AgeSelect } from "@/components/elements/Form/inputs/AgeSelect";
 import { PinkButton } from "@/stories/PinkButton";
 
-export function RegisterForm() {
+export default function SignUpForm() {
     const { signUp } = useAuth();
     const router = useRouter();
 
@@ -52,18 +54,28 @@ export function RegisterForm() {
     };
 
     return (
-        <FormProvider {...methods}>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <EmailInput />
-                <PasswordInput />
-                <NicknameInput />
-                <AgeSelect />
-                <div>
-                    <PinkButton type="submit" disabled={isSubmitting}>
-                        登録する
-                    </PinkButton>
-                </div>
-            </form>
-        </FormProvider>
+        <div className="container mx-auto max-w-md px-4 py-32">
+            <div className="bg-white p-10 rounded-2xl">
+                <h2 className="text-2xl font-bold text-center mb-6">
+                    ユーザ登録
+                </h2>
+                <FormProvider {...methods}>
+                    <form
+                        onSubmit={handleSubmit(onSubmit)}
+                        className="space-y-6"
+                    >
+                        <EmailInput />
+                        <PasswordInput />
+                        <NicknameInput />
+                        <AgeSelect />
+                        <div>
+                            <PinkButton type="submit" disabled={isSubmitting}>
+                                登録する
+                            </PinkButton>
+                        </div>
+                    </form>
+                </FormProvider>
+            </div>
+        </div>
     );
 }
