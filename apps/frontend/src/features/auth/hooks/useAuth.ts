@@ -1,14 +1,8 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Auth } from "../types/auth";
 import { auth } from "@/config/firebase/firebaseConfig";
 
-type Auth = {
-    signUp: (email: string, password: string) => Promise<string>;
-    signIn: (email: string, password: string) => Promise<string>;
-    signOut: () => Promise<string>;
-};
-
 export const useAuth = (): Auth => {
-    // ユーザー登録
     const signUp = async (email: string, password: string): Promise<string> => {
         try {
             const userCredential = await createUserWithEmailAndPassword(

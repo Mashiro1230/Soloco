@@ -1,38 +1,41 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/config/firebase/firebaseConfig";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { AuthSchema, authSchema } from "../schemas/auth.schema";
+import { useAuth } from "./useAuth";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { signUpUser } from "../api/signup";
 
-type Auth = {
-    signUp: (email: string, password: string) => Promise<string>;
-    signIn: (email: string, password: string) => Promise<string>;
-    signOut: () => Promise<string>;
-};
+export const useSignUp = () => {
+    const { signUp } = useAuth();
+    const router = useRouter();
 
-export const useAuth = (): Auth => {
-    // ユーザー登録
-    const signUp = async (email: string, password: string): Promise<string> => {
-        try {
-            const userCredential = await createUserWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
-            const user = await userCredential.user;
-            return user.uid;
-        } catch (error) {
-            return "ユーザー登録エラー";
+    const methods = useForm<AuthSchema>({
+        mode: "onBlur",
+        resolver: zodResolver(authSchema),
+    });
+
+    const onSubmit = async (data: AuthSchema) => {
+        const { email, password } = data;
+        const result = await signUp(email, password);
+
+        if (result === "error") {
+            toast.error("Error: 登録できません");
+            return;
+        }
+        const userResult = await signUpUser(data);
+        if (userResult.success) {
+            toast.success("ユーザー登録完了！");
+            router.push(`/solo-type/test?userId=${userResult.userId}`);
+        } else {
+            toast.error(userResult.error);
         }
     };
 
-    // ダミーのログイン
-    const signIn = async (email: string, password: string): Promise<string> => {
-        // サインインの実装（ここではダミーの返り値）
-        return "Sign in not implemented";
+    return {
+        methods,
+        handleSubmit: methods.handleSubmit,
+        isSubmitting: methods.formState.isSubmitting,
+        onSubmit,
     };
-
-    // ダミーのログアウト
-    const signOut = async (): Promise<string> => {
-        return "Sign out not implemented";
-    };
-
-    return { signUp, signIn, signOut };
 };
