@@ -3,13 +3,13 @@
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AuthSchema, authSchema } from "@/types/types";
-import { useAuth } from "@/hooks/auth/auth";
+import { useAuth } from "@/features/auth/hooks/useLogin";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import { EmailInput } from "@/components/elements/Form/inputs/EmailInput";
-import { PasswordInput } from "@/components/elements/Form/inputs/PasswordInput";
-import { NicknameInput } from "@/components/elements/Form/inputs/NicknameInput";
-import { AgeSelect } from "@/components/elements/Form/inputs/AgeSelect";
+import { EmailInput } from "@/features/auth/components/forms/inputs/EmailInput";
+import { PasswordInput } from "@/features/auth/components/forms/inputs/PasswordInput";
+import { NicknameInput } from "@/features/auth/components/forms/inputs/NicknameInput";
+import { AgeSelect } from "@/features/auth/components/forms/inputs/AgeSelect";
 import { PinkButton } from "@/stories/PinkButton";
 
 export default function SignUpForm() {

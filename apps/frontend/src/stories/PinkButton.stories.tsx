@@ -24,10 +24,10 @@ export const Default: Story = {
 
 // リンクボタンのストーリー
 export const Link: Story = {
-  args: {
-      children: "トップに戻る",
-      type: "button",
-      disabled: false,
-      className: "",
-  },
+    args: {
+        children: "トップに戻る",
+        type: "button",
+        disabled: false,
+        className: "",
+    },
 };

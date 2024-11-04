@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebase/firebase";
+import { auth } from "@/config/firebase/firebaseConfig";
 
 type Auth = {
     signUp: (email: string, password: string) => Promise<string>;
