@@ -3,3 +3,4 @@ export type Auth = {
   signIn: (email: string, password: string) => Promise<string>;
   signOut: () => Promise<string>;
 };
+
