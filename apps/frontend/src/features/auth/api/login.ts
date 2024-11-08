@@ -4,17 +4,11 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { SignInSchema, signInSchema } from "@/features/auth/schemas/auth.schema";
 import { PinkButton } from "@/components/elements/button/PinkButton";
 import { WhiteButton } from "@/components/elements/button/WhiteButton";
-import { z } from "zod";
 
-// Define the signInSchema
-const signInSchema = z.object({
-    email: z.string().email("有効なメールアドレスを入力してください"),
-    password: z.string().min(6, "パスワードは6文字以上必要です"),
-});
-
-export default function CustomerLogIn() {
+export default function LogIn() {
     const router = useRouter();
 
     const {
