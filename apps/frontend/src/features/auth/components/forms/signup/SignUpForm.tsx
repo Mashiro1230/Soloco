@@ -1,15 +1,16 @@
 "use client";
 
 import { FormProvider } from "react-hook-form";
+import { useFormHandler } from "@/features/auth/hooks/useFormHandler";
+import { useSubmit } from "../../../hooks/useSubmit";
 import { EmailInput } from "./EmailInput";
 import { PasswordInput } from "./PasswordInput";
 import { NicknameInput } from "./NicknameInput";
 import { AgeSelect } from "./AgeSelect";
-import { PinkButton } from "@/stories/PinkButton";
-import { useSignUp } from "../../../hooks/useSignUp";
 
-export default function SignUpForm() {
-    const { methods, handleSubmit, isSubmitting, onSubmit } = useSignUp();
+export function SignUpForm() {
+    const { methods, handleSubmit, isSubmitting } = useFormHandler();
+    const { onSubmit } = useSubmit();
 
     return (
         <div className="container mx-auto max-w-md px-4 py-32">
@@ -26,9 +27,13 @@ export default function SignUpForm() {
                         <PasswordInput />
                         <NicknameInput />
                         <AgeSelect />
-                        <PinkButton type="submit" disabled={isSubmitting}>
+                        <button
+                            type="submit"
+                            className="mt-4 w-full px-4 py-2 bg-pink-500 text-white rounded-md"
+                            disabled={isSubmitting}
+                        >
                             登録する
-                        </PinkButton>
+                        </button>
                     </form>
                 </FormProvider>
             </div>
