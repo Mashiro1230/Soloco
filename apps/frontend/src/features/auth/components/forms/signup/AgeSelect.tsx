@@ -1,17 +1,13 @@
 import { useFormContext } from "react-hook-form";
 import { AuthSchema } from "@/types/types";
+import { Label } from "../../common/Label";
 
 export function AgeSelect() {
     const { register } = useFormContext<AuthSchema>();
 
     return (
         <div>
-            <label
-                htmlFor="age"
-                className="block text-sm font-medium text-gray-700 mb-1"
-            >
-                年齢
-            </label>
+            <Label htmlFor="age" label="年齢" />
             <select
                 {...register("age")}
                 id="age"

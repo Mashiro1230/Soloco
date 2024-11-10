@@ -1,5 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import { AuthSchema } from "@/types/types";
+import { Label } from "../../common/Label";
+import { Input } from "../../common/Input";
 
 export function NicknameInput() {
     const {
@@ -9,27 +11,14 @@ export function NicknameInput() {
 
     return (
         <div>
-            <label
-                htmlFor="nickname"
-                className="block text-sm font-medium text-gray-700 mb-1"
-            >
-                ニックネーム
-                <span className="text-sm font-medium text-red-500 ml-3">
-                    必須
-                </span>
-            </label>
-            <input
-                {...register("nickname")}
+            <Label htmlFor="nickname" label="ニックネーム" required />
+            <Input
                 id="nickname"
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500"
                 placeholder="サオトメ メグミ"
+                registration={register("nickname")}
+                errorMessage={errors.nickname?.message}
             />
-            {errors.nickname && (
-                <p className="text-red-500 text-xs mt-1">
-                    {errors.nickname.message}
-                </p>
-            )}
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import { InputProps } from "../../types/auth";
 
-export function input({
+export function Input({
     id,
     type,
     placeholder,

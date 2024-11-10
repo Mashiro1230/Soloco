@@ -1,5 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import { AuthSchema } from "@/types/types";
+import { Label } from "../../common/Label";
+import { Input } from "../../common/Input";
 
 export function EmailInput() {
     const {
@@ -9,27 +11,14 @@ export function EmailInput() {
 
     return (
         <div>
-            <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1"
-            >
-                メールアドレス
-                <span className="text-sm font-medium text-red-500 ml-3">
-                    必須
-                </span>
-            </label>
-            <input
-                {...register("email")}
+            <Label htmlFor="email" label="メールアドレス" required />
+            <Input
                 id="email"
                 type="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500"
                 placeholder="abc@test.com"
+                registration={register("email")}
+                errorMessage={errors.email?.message}
             />
-            {errors.email && (
-                <p className="text-red-500 text-xs mt-1">
-                    {errors.email.message}
-                </p>
-            )}
         </div>
     );
 }
