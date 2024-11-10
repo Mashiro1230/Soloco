@@ -1,12 +1,12 @@
 "use client";
 
 import { FormProvider } from "react-hook-form";
-import { EmailInput } from "./inputs/EmailInput";
-import { PasswordInput } from "./inputs/PasswordInput";
-import { NicknameInput } from "./inputs/NicknameInput";
-import { AgeSelect } from "./inputs/AgeSelect";
+import { EmailInput } from "./EmailInput";
+import { PasswordInput } from "./PasswordInput";
+import { NicknameInput } from "./NicknameInput";
+import { AgeSelect } from "./AgeSelect";
 import { PinkButton } from "@/stories/PinkButton";
-import { useSignUp } from "../../hooks/useSignUp";
+import { useSignUp } from "../../../hooks/useSignUp";
 
 export default function SignUpForm() {
     const { methods, handleSubmit, isSubmitting, onSubmit } = useSignUp();

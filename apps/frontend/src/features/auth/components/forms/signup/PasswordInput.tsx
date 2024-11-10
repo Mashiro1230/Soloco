@@ -1,5 +1,6 @@
 import { useFormContext } from "react-hook-form";
 import { AuthSchema } from "@/types/types";
+import { Label } from "../../common/Label";
 
 export function PasswordInput() {
     const {
