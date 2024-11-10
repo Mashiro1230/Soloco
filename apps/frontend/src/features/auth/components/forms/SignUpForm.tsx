@@ -8,7 +8,7 @@ import { AgeSelect } from "./inputs/AgeSelect";
 import { PinkButton } from "@/stories/PinkButton";
 import { useSignUp } from "../../hooks/useSignUp";
 
-const SignUpForm = () => {
+export default function SignUpForm() {
     const { methods, handleSubmit, isSubmitting, onSubmit } = useSignUp();
 
     return (
@@ -26,16 +26,12 @@ const SignUpForm = () => {
                         <PasswordInput />
                         <NicknameInput />
                         <AgeSelect />
-                        <div>
-                            <PinkButton type="submit" disabled={isSubmitting}>
-                                登録する
-                            </PinkButton>
-                        </div>
+                        <PinkButton type="submit" disabled={isSubmitting}>
+                            登録する
+                        </PinkButton>
                     </form>
                 </FormProvider>
             </div>
         </div>
     );
-};
-
-export default SignUpForm;
+}

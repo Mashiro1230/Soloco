@@ -14,7 +14,7 @@ export function PasswordInput() {
                 className="block text-sm font-medium text-gray-700 mb-1"
             >
                 パスワード（8文字以上）
-                <span className="text-sm font-medium text-red-600 ml-2">
+                <span className="text-sm font-medium text-red-500 ml-3">
                     必須
                 </span>
             </label>

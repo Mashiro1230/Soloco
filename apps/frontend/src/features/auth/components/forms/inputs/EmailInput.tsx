@@ -14,7 +14,7 @@ export function EmailInput() {
                 className="block text-sm font-medium text-gray-700 mb-1"
             >
                 メールアドレス
-                <span className="text-sm font-medium text-red-600 ml-2">
+                <span className="text-sm font-medium text-red-500 ml-3">
                     必須
                 </span>
             </label>
