@@ -8,7 +8,7 @@ import { PasswordInput } from "./PasswordInput";
 import { NicknameInput } from "./NicknameInput";
 import { AgeSelect } from "./AgeSelect";
 
-export function SignUpForm() {
+export function RegisterForm() {
     const { methods, handleSubmit, isSubmitting } = useFormHandler();
     const { onSubmit } = useSubmit();
 
