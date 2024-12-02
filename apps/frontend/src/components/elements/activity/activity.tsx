@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import LikeButton from "../button/like/like";
 import FavoriteButton from "../button/favorite/favorite";
 import { ActivityCardProps } from "@/types/types";
