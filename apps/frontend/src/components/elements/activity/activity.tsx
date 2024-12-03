@@ -5,7 +5,6 @@ import FavoriteButton from "../button/favorite/favorite";
 import { ActivityCardProps } from "@/types/types";
 
 const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
-
     return (
         <div className="flex-none w-72">
             <div className="bg-white rounded-2xl overflow-hidden text-center h-full flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg">
