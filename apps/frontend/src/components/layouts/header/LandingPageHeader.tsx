@@ -1,9 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// S3から画像取得
-// const Logo = getImageUrl("soloco_logo.png");
-
 export const LandingPageHeader = () => (
     <header className="relative">
         <div className="mx-auto">
