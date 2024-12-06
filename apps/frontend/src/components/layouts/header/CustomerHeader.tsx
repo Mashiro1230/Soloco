@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { CustomerNavigationMenu } from "./CustomerNavitaion";
 
-// S3から画像取得
-
 
 export const CustomerHeader = () => {
     return (
